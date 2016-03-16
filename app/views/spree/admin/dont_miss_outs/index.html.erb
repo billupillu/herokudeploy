@@ -1,0 +1,32 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_dont_miss_outs) %>
+<% end %>
+
+
+<h3>You cannot add multiple images for this paticular section, Image Scale: 1600x800px</h3>
+<table class="table" id="listing_dont_miss_outs" data-hook>
+  <thead>
+    <tr data-hook="admin_dont_miss_outs_index_headers">
+      <th><%= t(:dont_miss_out_img, scope: 'activerecord.attributes.spree/dont_miss_out') %></th>
+      <th data-hook="admin_dont_miss_outs_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dont_miss_outs.each do |dont_miss_out| %>
+      <tr id="<%= spree_dom_id dont_miss_out %>" data-hook="admin_dont_miss_outs_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td><%= link_to dont_miss_out.dont_miss_out_img, edit_object_url(dont_miss_out) %></td>
+        <td><%=dont_miss_out.dont_miss_out_heading_sub%></td>
+        <td><%=dont_miss_out.dont_miss_out_heading_main%></td>
+        <td><%=dont_miss_out.dont_miss_out_content%></td>
+        <td><%=dont_miss_out.dont_miss_out_url%></td>
+        <td><%=image_tag dont_miss_out.dont_miss_out_img(:thumb)%></td>
+        <td data-hook="admin_dont_miss_outs_index_row_actions" class="actions text-right">
+          <%= link_to_edit dont_miss_out, no_text: true %>
+          <%= link_to_delete dont_miss_out, no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @dont_miss_outs %>

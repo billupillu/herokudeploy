@@ -1,0 +1,41 @@
+<div class="xlg-margin2x hidden-xs"></div><!-- space -->
+            <div class="lg-margin visible-xs"></div><!-- space -->
+
+            <div id="arrivals-section" class="section dark">
+                
+                <div class="slider-banner-content">
+                    <div class="vcenter-container">
+                        <div class="vcenter">
+                            <div class="container">
+                               <div class="arrivals-content section-content text-center">
+                                    <h3>Arts nd Artists</h3>
+                                    <div class="slider-custom-buttons clearfix">
+                                        <a href="#" id="arrivals-prev" class="slider-btn slider-btn-prev">Previous Slide</a>
+                                        <a href="#" id="arrivals-next" class="slider-btn slider-btn-next">Next Slide</a>
+                                    </div><!---End .slider-custom-buttons -->
+                                    <h2>new paintings</h2>
+                                    <p>Donec gravida elit sed rhoncus eleifend. Nam viverra lacus non lobortis malesuada fusce.</p>
+                                    <a href="/products" class="btn btn-custom-11 btn-lger min-width">TAKE LOOK</a>
+                                </div><!-- End .arrivals-content -->
+                            </div><!-- End .container -->
+                        </div><!-- End .vcenter -->
+                    </div><!-- End .vcenter-container -->
+                </div><!-- End .slider-banner-content -->
+
+                <div class="revbanner-container">
+                    <div id="arrivals-slider" class="revbanner-slider">
+                        <ul>
+                        <%Spree::SliderBanner.take(3).each do |sb|%>
+                            <li data-transition="fade" data-slotamount="8" data-masterspeed="800">
+                                <img src="<%=asset_path 'revs/dummy.png'%>" alt="background" style="background-color:#ebe9e1">
+                                <div class="tp-caption lfr ltr" data-x="center" data-y="center" data-hoffset="700" data-speed="1000" data-start="500" data-easing="Expo.easeOut">
+                                   <img src="<%=sb.slider_banner_img(:medium)%>" >
+                                </div>
+
+                            </li>
+                            
+                        <%end%>
+                        </ul>
+                    </div><!-- end .revbanner-slider -->
+                </div><!-- End .revbanner-container -->
+            </div><!-- #arrivals-section -->

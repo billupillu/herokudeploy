@@ -1,0 +1,392 @@
+<div class="lg-margin2x hidden-xs"></div><!-- space -->
+            <div class="md-margin2x visible-xs"></div><!-- space -->
+
+            <div class="container small-tab-container">
+                <!-- Tab nav -->
+                <ul class="nav nav-pills text-center" role="tablist">
+                	<% t = Spree::Taxonomy.first.taxons.take(3)%>
+                    <li class="active"><a href="#featured" role="tab" data-toggle="tab"><%=t[0].name%></a></li>
+                    <li><a href="#bestsellers" role="tab" data-toggle="tab"><%=t[1].name%></a></li>
+                    <li><a href="#special" role="tab" data-toggle="tab"><%=t[2].name%></a></li>
+                </ul>
+<!--                 <%#t[2].products.each do|product|%>
+		                <%# urlt = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+               			<%#= link_to small_image(product, itemprop: "image"), urlt, itemprop: 'urlt' %>
+      					<%#= link_to truncate(product.name, length: 50), urlt, class: 'info', itemprop: "name", title: product.name %>
+      					<span class="price selling lead" itemprop="price"><%#= display_price(product) %></span>
+      				<%#end%> -->
+                <!-- Tab panes -->
+                <%1.times do%>
+                <div class="tab-content">
+               
+                    <div class="tab-pane fade in active" id="featured">
+                      <% if t[0].products.empty? %>
+    						<div data-hook="products_search_results_heading_no_results_found">
+     						 	<%= Spree.t(:no_products_found) %>
+    						</div>
+    				  <%else%>		
+                    <%eight = t[0].products.take(8)%>
+
+                    <%four1 = [eight[0],eight[1],eight[2],eight[3]]%>
+                    <%four2 = [eight[4],eight[5],eight[6],eight[7]]%>
+                    <%eight = eight.count%>
+		            <%# urlt = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+                        <div class="row">
+                        	<%four1.each do |p11|%>
+                        	<%if p11.nil?%>
+                        		<div class="col-sm-3"></div>
+                        	<%else%>	
+                            <div class="col-sm-3">
+                                <div class="product product6">
+                                    <div class="product-top">
+                                    <% urlt = spree.product_url(p11, taxon_id: @taxon.try(:id)) %>
+                                        <figure class="product-image-container">
+                                            <a href="<%=urlt%>" title="<%=p11.name%>">
+                                            	<%if p11.images[0]!=nil %>
+                                                <img src="<%=p11.images[0].attachment.url(:product)%>" alt="<%=p11.name%>" class="product-image">
+                                                 <%else%>
+                                                <img src="<%=asset_path 'product-hover.jpg'%>" alt="<%=p11.name%>" class="product-image-hover">	
+                                                <%end%>
+                                                <%if p11.images[1]!=nil %>
+                                                <img src="<%=p11.images[1].attachment.url(:product)%>" alt="<%=p11.name%>" class="product-image-hover">
+                                                <%else%>
+                                                <img src="<%=asset_path 'product-hover.png'%>" alt="<%=p11.name%>" class="product-image-hover">	
+                                                <%end%>
+                                            </a>
+                                        </figure>
+                                    </div><!-- End .product-top -->
+                                    
+                                    <div class="product-meta">
+                                        <h3 class="product-name"><a href="<%=urlt%>" title="<%=p11.name%>"><%=p11.name%></a>
+                                        </h3>
+                                        <div class="product-price-container">
+                                            <span class="product-price"><%= display_price(p11)%></span>
+                                        </div> <!-- End .product-price-container -->
+                                        
+                                        <div class="product-absolute-action-container clearfix">
+                                            <a href="<%=urlt%>" title="Add to Cart" class="product-add-btn">
+                                                <span class="add-btn-text">Add to Cart</span>
+                                                <span class="product-btn product-cart">Cart</span>
+                                            </a>
+                                            <div class="product-action-inner">
+                                                <a href="#" title="Favorite" class="product-btn product-favorite">Favorite</a>
+                                                <a href="#" title="Compare" class="product-btn product-compare">Compare</a>
+                                            </div><!-- End .product-action-right -->
+                                        </div><!-- End .product-absolute-action-container -->
+                                    </div><!-- End .product-meta -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-3 -->
+                            <%end%><!--if paticular product nil end-->
+                            <%end%>
+                            
+
+
+                        <%if eight>=8%>
+                        <div class="row">
+
+                        	<%four2.each do |p12|%>
+                            <div class="col-sm-3">
+                                <div class="product product6">
+                                    <div class="product-top">
+                                        <!-- <span class="outofstock-box-bg top-left">out of <span>stock</span></span> -->
+                                        <% urlt = spree.product_url(p12, taxon_id: @taxon.try(:id)) %>
+                                        <figure class="product-image-container">
+                                            <a href="<%=urlt%>" title="<%=p12.name%>">
+                                            	<%if p12.images[0]!=nil %>
+                                                <img src="<%=p12.images[0].attachment.url(:product)%>" alt="<%=p12.name%>" class="product-image">
+                                                 <%else%>
+                                                <img src="<%=asset_path 'product-hover.jpg'%>" alt="<%=p12.name%>" class="product-image-hover">	
+                                                <%end%>
+                                                <%if p12.images[1]!=nil %>
+                                                <img src="<%=p12.images[1].attachment.url(:product)%>" alt="<%=p12.name%>" class="product-image-hover">
+                                                <%else%>
+                                                <img src="<%=asset_path 'product-hover.png'%>" alt="<%=p12.name%>" class="product-image-hover">	
+                                                <%end%>
+                                            </a>
+                                        </figure>
+                                    </div><!-- End .product-top -->
+                                    
+                                    <div class="product-meta">
+                                        <h3 class="product-name"><a href="<%=urlt%>" title="<%=p12.name%>"><%=p12.name%></a></h3>
+                                        <div class="product-price-container">
+                                            <span class="product-price"><%= display_price(p12)%></span>
+                                        </div><!-- End .product-price-container -->
+
+                                        <div class="product-absolute-action-container clearfix">
+                                            <a href="<%=urlt%>" title="Add to Cart" class="product-add-btn">
+                                                <span class="add-btn-text">Add to Cart</span>
+                                                <span class="product-btn product-cart">Cart</span>
+                                            </a>
+                                            <div class="product-action-inner">
+                                                <a href="#" title="Favorite" class="product-btn product-favorite">Favorite</a>
+                                                <a href="#" title="Compare" class="product-btn product-compare">Compare</a>
+                                            </div><!-- End .product-action-right -->
+                                        </div><!-- End .product-absolute-action-container -->
+                                    </div><!-- End .product-meta -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-3 -->
+                            <%end%>
+                        </div>
+                        <%else%>
+                        <div class="row"></div>
+                        <%end%> 
+                    <%end%><!--final end-->      
+                  	<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+                  	<%1.times do%>
+
+                    <div class="tab-pane fade" id="bestsellers">
+                    <% if t[1].products.empty? %>
+    						<div data-hook="products_search_results_heading_no_results_found">
+     						 	<%= Spree.t(:no_products_found) %>
+    						</div>
+    				  <%else%>		
+                    <%eight1 = t[1].products.take(8)%>
+
+                    <%four1 = [eight1[0],eight1[1],eight1[2],eight1[3]]%>
+                    <%four2 = [eight1[4],eight1[5],eight1[6],eight1[7]]%>
+                    <%eight1 = eight1.count%>
+                        <div class="row">
+                        <%four1.each do |p11|%>
+                        	<%if p11.nil?%>
+                        		<div class="col-sm-3"></div>
+                        	<%else%>	
+                            <div class="col-sm-3">
+                                <div class="product product6">
+                                    <div class="product-top">
+                                        <% urlt = spree.product_url(p11, taxon_id: @taxon.try(:id)) %>
+                                        <figure class="product-image-container">
+                                            <a href="<%=urlt%>" title="<%=p11.name%>">
+                                            	<%if p11.images[0]!=nil %>
+                                                <img src="<%=p11.images[0].attachment.url(:product)%>" alt="<%=p11.name%>" class="product-image">
+                                                 <%else%>
+                                                <img src="<%=asset_path 'product-hover.jpg'%>" alt="<%=p11.name%>" class="product-image-hover">	
+                                                <%end%>
+                                                <%if p11.images[1]!=nil %>
+                                                <img src="<%=p11.images[1].attachment.url(:product)%>" alt="<%=p11.name%>" class="product-image-hover">
+                                                <%else%>
+                                                <img src="<%=asset_path 'product-hover.png'%>" alt="<%=p11.name%>" class="product-image-hover">	
+                                                <%end%>
+                                            </a>
+                                        </figure>
+                                    </div><!-- End .product-top -->
+                                    <div class="product-meta">
+                                        <h3 class="product-name"><a href="<%=urlt%>" title="<%=p11.name%>"><%=p11.name%></a></h3>
+                                        <div class="product-price-container">
+                                            <span class="product-price"><%= display_price(p11)%></span>
+                                        </div><!-- End .product-price-container -->
+
+                                        <div class="product-absolute-action-container clearfix">
+                                            <a href="#" title="Add to Cart" class="product-add-btn">
+                                                <span class="add-btn-text">Add to Cart</span>
+                                                <span class="product-btn product-cart">Cart</span>
+                                            </a>
+                                            <div class="product-action-inner">
+                                                <a href="#" title="Favorite" class="product-btn product-favorite">Favorite</a>
+                                                <a href="#" title="Compare" class="product-btn product-compare">Compare</a>
+                                            </div><!-- End .product-action-right -->
+                                        </div><!-- End .product-absolute-action-container -->
+                                    </div><!-- End .product-meta -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-3 -->
+                            <%end%><!--if paticular product nil end-->
+                            <%end%>
+                          
+                        <%if eight1>=8%>
+                        <div class="row">
+                        <%four2.each do |p12|%>
+                            <div class="col-sm-3">
+                                <div class="product product6">
+                                    <div class="product-top">
+                                        <!-- <span class="outofstock-box-bg top-right">out of <span>stock</span></span> -->
+                                        <figure class="product-image-container">
+                                            <a href="<%=urlt%>" title="<%=p12.name%>">
+                                            	<%if p12.images[0]!=nil %>
+                                                <img src="<%=p12.images[0].attachment.url(:product)%>" alt="<%=p12.name%>" class="product-image">
+                                                 <%else%>
+                                                <img src="<%=asset_path 'product-hover.jpg'%>" alt="<%=p12.name%>" class="product-image-hover">	
+                                                <%end%>
+                                                <%if p12.images[1]!=nil %>
+                                                <img src="<%=p12.images[1].attachment.url(:product)%>" alt="<%=p12.name%>" class="product-image-hover">
+                                                <%else%>
+                                                <img src="<%=asset_path 'product-hover.png'%>" alt="<%=p12.name%>" class="product-image-hover">	
+                                                <%end%>
+                                            </a>
+                                        </figure>
+                                    </div><!-- End .product-top -->
+                                    <div class="product-meta">
+                                        <h3 class="product-name"><a href="<%=urlt%>" title="<%=p12.name%>"><%=p12.name%></a></h3>
+                                        <div class="product-price-container">
+                                            <span class="product-price"><%= display_price(p12)%></span>
+                                        </div><!-- End .product-price-container -->
+
+                                        <div class="product-absolute-action-container clearfix">
+                                            <a href="<%=urlt%>" title="Add to Cart" class="product-add-btn">
+                                                <span class="add-btn-text">Add to Cart</span>
+                                                <span class="product-btn product-cart">Cart</span>
+                                            </a>
+                                            <div class="product-action-inner">
+                                                <a href="#" title="Favorite" class="product-btn product-favorite">Favorite</a>
+                                                <a href="#" title="Compare" class="product-btn product-compare">Compare</a>
+                                            </div><!-- End .product-action-right -->
+                                        </div><!-- End .product-absolute-action-container -->
+                                    </div><!-- End .product-meta -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-3 -->
+                            <%end%>
+
+                        
+
+                            
+                        </div><!--  End .row -->
+                        <%else%>
+                        <div class="row"></div>
+                         <%end%>
+                    </div><!-- End .tab-pane -->
+                    <%end%>
+                    <%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <%1.times do%>
+
+                    <div class="tab-pane fade" id="special">
+                    <% if t[2].products.empty? %>
+    						<div data-hook="products_search_results_heading_no_results_found">
+     						 	<h3><%= Spree.t(:no_products_found) %></h3>
+    						</div>
+    				  <%else%>		
+                    <%eight1 = t[2].products.take(8)%>
+
+                    <%four1 = [eight1[0],eight1[1],eight1[2],eight1[3]]%>
+                    <%four2 = [eight1[4],eight1[5],eight1[6],eight1[7]]%>
+                    <%eight1 = eight1.count%>
+                        <div class="row">
+                        <%four1.each do |p11|%>
+                        	<%if p11.nil?%>
+                        		<div class="col-sm-3"></div>
+                        	<%else%>	
+                            <div class="col-sm-3">
+                                <div class="product product6">
+                                    <div class="product-top">
+                                        <% urlt = spree.product_url(p11, taxon_id: @taxon.try(:id)) %>
+                                        <figure class="product-image-container">
+                                            <a href="<%=urlt%>" title="<%=p11.name%>">
+                                            	<%if p11.images[0]!=nil %>
+                                                <img src="<%=p11.images[0].attachment.url(:product)%>" alt="<%=p11.name%>" class="product-image">
+                                                 <%else%>
+                                                <img src="<%=asset_path 'product-hover.jpg'%>" alt="<%=p11.name%>" class="product-image-hover">	
+                                                <%end%>
+                                                <%if p11.images[1]!=nil %>
+                                                <img src="<%=p11.images[1].attachment.url(:product)%>" alt="<%=p11.name%>" class="product-image-hover">
+                                                <%else%>
+                                                <img src="<%=asset_path 'product-hover.png'%>" alt="<%=p11.name%>" class="product-image-hover">	
+                                                <%end%>
+                                            </a>
+                                        </figure>
+                                    </div><!-- End .product-top -->
+                                    <div class="product-meta">
+                                        <h3 class="product-name"><a href="<%=urlt%>" title="<%=p11.name%>"><%=p11.name%></a></h3>
+                                        <div class="product-price-container">
+                                            <span class="product-price"><%= display_price(p11)%></span>
+                                        </div><!-- End .product-price-container -->
+
+                                        <div class="product-absolute-action-container clearfix">
+                                            <a href="#" title="Add to Cart" class="product-add-btn">
+                                                <span class="add-btn-text">Add to Cart</span>
+                                                <span class="product-btn product-cart">Cart</span>
+                                            </a>
+                                            <div class="product-action-inner">
+                                                <a href="#" title="Favorite" class="product-btn product-favorite">Favorite</a>
+                                                <a href="#" title="Compare" class="product-btn product-compare">Compare</a>
+                                            </div><!-- End .product-action-right -->
+                                        </div><!-- End .product-absolute-action-container -->
+                                    </div><!-- End .product-meta -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-3 -->
+                            <%end%><!--if paticular product nil end-->
+                            <%end%>
+                          
+                        <%if eight1>=8%>
+                        <div class="row">
+                        <%four2.each do |p12|%>
+                            <div class="col-sm-3">
+                                <div class="product product6">
+                                    <div class="product-top">
+                                        <!-- <span class="outofstock-box-bg top-right">out of <span>stock</span></span> -->
+                                        <figure class="product-image-container">
+                                            <a href="<%=urlt%>" title="<%=p12.name%>">
+                                            	<%if p12.images[0]!=nil %>
+                                                <img src="<%=p12.images[0].attachment.url(:product)%>" alt="<%=p12.name%>" class="product-image">
+                                                 <%else%>
+                                                <img src="<%=asset_path 'product-hover.jpg'%>" alt="<%=p12.name%>" class="product-image-hover">	
+                                                <%end%>
+                                                <%if p12.images[1]!=nil %>
+                                                <img src="<%=p12.images[1].attachment.url(:product)%>" alt="<%=p12.name%>" class="product-image-hover">
+                                                <%else%>
+                                                <img src="<%=asset_path 'product-hover.png'%>" alt="<%=p12.name%>" class="product-image-hover">	
+                                                <%end%>
+                                            </a>
+                                        </figure>
+                                    </div><!-- End .product-top -->
+                                    <div class="product-meta">
+                                        <h3 class="product-name"><a href="<%=urlt%>" title="<%=p12.name%>"><%=p12.name%></a></h3>
+                                        <div class="product-price-container">
+                                            <span class="product-price"><%= display_price(p12)%></span>
+                                        </div><!-- End .product-price-container -->
+
+                                        <div class="product-absolute-action-container clearfix">
+                                            <a href="<%=urlt%>" title="Add to Cart" class="product-add-btn">
+                                                <span class="add-btn-text">Add to Cart</span>
+                                                <span class="product-btn product-cart">Cart</span>
+                                            </a>
+                                            <div class="product-action-inner">
+                                                <a href="#" title="Favorite" class="product-btn product-favorite">Favorite</a>
+                                                <a href="#" title="Compare" class="product-btn product-compare">Compare</a>
+                                            </div><!-- End .product-action-right -->
+                                        </div><!-- End .product-absolute-action-container -->
+                                    </div><!-- End .product-meta -->
+                                </div><!-- End .product -->
+                            </div><!-- End .col-sm-3 -->
+                            <%end%>
+
+                        
+
+                            
+                        </div><!--  End .row -->
+                        <%else%>
+                        <div class="row"></div>
+                         <%end%>
+                    </div><!-- End .tab-pane -->
+                    <%end%>
+                    <%end%>
+
+
+
+
+
+                </div><!-- End .tab-content -->
+            </div><!-- End .simple-tab-container -->

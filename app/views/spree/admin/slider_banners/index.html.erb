@@ -1,0 +1,31 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_slider_banners) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_slider_banner), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_slider_banner_link' %>
+<% end if can?(:create, Spree::SliderBanner) %>
+
+<table class="table" id="listing_slider_banners" data-hook>
+  <thead>
+    <tr data-hook="admin_slider_banners_index_headers">
+      <th><%= t("Some Text (Optional)", scope: 'activerecord.attributes.spree/slider_banner') %></th>
+      <th>Slider Banner Image</th>
+      <th data-hook="admin_slider_banners_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @slider_banners.each do |slider_banner| %>
+      <tr id="<%= spree_dom_id slider_banner %>" data-hook="admin_slider_banners_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td><%= link_to slider_banner.url, edit_object_url(slider_banner) %></td>
+        <td><%=image_tag slider_banner.slider_banner_img(:thumb)%></td>
+        <td data-hook="admin_slider_banners_index_row_actions" class="actions text-right">
+          <%= link_to_edit slider_banner, no_text: true %>
+          <%= link_to_delete slider_banner, no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @slider_banners %>

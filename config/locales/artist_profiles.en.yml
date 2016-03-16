@@ -1,0 +1,18 @@
+en:
+  spree:
+    admin:
+      tab:
+        artist_profiles: "ArtistProfiles"
+    new_artist_profile: "New ArtistProfile"
+    listing_artist_profiles: "Listing ArtistProfiles"
+    editing_artist_profile: "Editing ArtistProfile"
+  activerecord:
+    attributes:
+      spree/artist_profile:
+        artist_img: Artist Img
+        artist_name: Artist Name
+        artist_expertise: Artist Expertise
+        artist_brief: Artist Brief
+        artist_fb: Artist Fb
+        artist_url: Artist Url
+        xtra_field: Xtra Field

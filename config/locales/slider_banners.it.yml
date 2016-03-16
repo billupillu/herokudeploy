@@ -1,0 +1,13 @@
+it:
+  spree:
+    admin:
+      tab:
+        slider_banners: "Slider Banners"
+    new_slider_banner: "Nuovo Slider Banner"
+    listing_slider_banners: "Lista Slider Banners"
+    editing_slider_banner: "Modifica Slider Banner"
+  activerecord:
+    attributes:
+      spree/slider_banner:
+        url: Url
+        slider_banner_img: Slider Banner Img

@@ -1,0 +1,28 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_feature_menu_heads) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_feature_menu_head), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_feature_menu_head_link' %>
+<% end if can?(:create, Spree::FeatureMenuHead) %>
+
+<table class="table" id="listing_feature_menu_heads" data-hook>
+  <thead>
+    <tr data-hook="admin_feature_menu_heads_index_headers">
+      <th><%= t(:feature_menu_heading, scope: 'activerecord.attributes.spree/feature_menu_head') %></th>
+      <th data-hook="admin_feature_menu_heads_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @feature_menu_heads.each do |feature_menu_head| %>
+      <tr id="<%= spree_dom_id feature_menu_head %>" data-hook="admin_feature_menu_heads_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td><%= link_to feature_menu_head.feature_menu_heading, edit_object_url(feature_menu_head) %></td>
+        <td data-hook="admin_feature_menu_heads_index_row_actions" class="actions text-right">
+          <%= link_to_edit feature_menu_head, no_text: true %>          
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @feature_menu_heads %>

@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_feature_menu_subitem) %>
+<% end %>
+
+<div data-hook="admin_feature_menu_subitem_edit_form_header">
+  <%= render 'spree/shared/error_messages', target: @feature_menu_subitem %>
+</div>
+
+<div data-hook="admin_feature_menu_subitem_edit_form">
+  <%= form_for [:admin, @feature_menu_subitem] do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', f: f %>
+        <%= render 'spree/admin/shared/edit_resource_links' %>
+      </div>
+    </div>
+  <% end %>
+</div>

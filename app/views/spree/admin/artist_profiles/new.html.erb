@@ -1,0 +1,22 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new_artist_profile) %>
+<% end %>
+<p>Artist Image: Try to add artist image of 220x220</p>
+<p>Artist Name: Full name of artists ex: Rama Krishna Sagar </p>
+<p>Artist expertise: Any expertise (ex: Oil Painter) this field is optional </p>
+<p>Artist Brief: Description of artist</p>
+<p>Artist FBand Artist Url: Artist fb link and url is artist's online gallery link,website link or wiki page and both fields are optional</p>
+<div data-hook="admin_artist_profile_new_form_header">
+  <%= render 'spree/shared/error_messages', target: @artist_profile %>
+</div>
+
+<div data-hook="admin_artist_profile_new_form">
+  <%= form_for [:admin, @artist_profile] do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', f: f %>
+        <%= render 'spree/admin/shared/new_resource_links' %>
+      </div>
+    </div>
+  <% end %>
+</div>

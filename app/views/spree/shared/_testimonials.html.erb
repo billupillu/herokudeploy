@@ -1,0 +1,53 @@
+
+<div class="md-margin2x half hidden-xs"></div><!-- space -->
+            <div class="xs-margin visible-xs"></div><!-- space -->
+            <%if Spree::TestimonialBanner.last.testimonial_banner_img!=nil%>
+            <div class="testimonials-section index6 light parallax" data-stellar-background-ratio="0.2" style="background-image:url(<%=Spree::TestimonialBanner.last.testimonial_banner_img%>)">
+            <%else%>
+            <div class="testimonials-section index6 light parallax" data-stellar-background-ratio="0.2" style="background-image:url(<%=asset_path 'testimonial.jpg'%>)">
+            <%end%>
+                <div class="container">
+                    <h2 class="h1" style="text-shadow:0 0 2px #e61446,0 0 2px #fff; margin-bottom:0px;">Testimonials</h2>
+                </div><!-- End .container -->
+
+                <div class="vcenter-container">
+                    <div class="vcenter bottom-nav light-nav">
+                        <div id="kk" class="owl-carousel testimonials-slider"  style="display:inline-block;">
+                        	<%Testimonial.take(4).each do |test|%>
+	                            <div class="testimonial">
+	                                <span class="quote-icon light"></span>
+	                                <p><p1 style="font-size:50px;">"</p1><%=test.content%></p>
+
+	                                <span class="testimonial-owner"><%=test.name%></span>
+	                            </div><!-- End .testimonial -->
+                            <%end%>
+                           
+                        </div><!-- End .about-banner-slider -->
+                    </div><!-- End .vcenter -->
+                </div><!-- End .vcenter-container -->
+            </div><!-- end .testimonials-section -->
+<%=javascript_tag do%>
+
+
+   $("#kk").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      autoPlay : 3000,
+      slideSpeed : 300,
+      paginationSpeed : 500,
+      stopOnHover : true,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+
+    $('.owl-pagination').css({"display":"none"});
+    $('#kk .owl-prev').css({"display":"none"});
+    $('#kk .owl-next').css({"display":"none"});
+<%end%>          

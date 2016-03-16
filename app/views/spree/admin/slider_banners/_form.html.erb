@@ -1,0 +1,16 @@
+<div data-hook="admin_slider_banner_form_fields" class="row">
+  <div class="col-md-6">
+    <%= f.field_container :url, class: ['form-group'] do %>
+      <% f.label :url %>
+      <%= f.text_field :url, class: 'form-control', placeholder: "Some text (optional)" %>
+      <%= error_message_on :slider_banner, :url %>
+    <% end %>
+
+    <%= f.field_container :slider_banner_img, class: ['form-group'] do %>
+      <%= f.label :slider_banner_img %>
+      <%= f.file_field :slider_banner_img, class: 'form-control' %>
+      <%= error_message_on :slider_banner, :slider_banner_img %>
+    <% end %>
+
+  </div>
+</div>

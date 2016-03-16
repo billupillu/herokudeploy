@@ -1,0 +1,15 @@
+it:
+  spree:
+    admin:
+      tab:
+        banners: "Banners"
+    new_banner: "Nuovo Banner"
+    listing_banners: "Lista Banners"
+    editing_banner: "Modifica Banner"
+  activerecord:
+    attributes:
+      spree/banner:
+        heading1: Heading1
+        heading2: Heading2
+        brief: Brief
+        url: Url

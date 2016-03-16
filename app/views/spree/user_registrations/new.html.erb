@@ -1,0 +1,69 @@
+
+<div class="xlg-margin"></div><!-- space -->
+<div class="xs-margin half"></div><!-- space -->
+<div class="xlg-margin"></div><!-- space -->
+ <div class="breadcrumb-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="breadcrumb">
+                                <li><a href="index.html" title="Home">Home</a></li>
+                                <li class="active">Register Account</li>
+                            </ul>
+                        </div><!-- End .col-md-12 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End .breadcrumb-container -->
+<% @body_id = 'signup' %>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+            <div class="container" data-hook="login">
+                <!-- <form action="#" id="register-form"> -->
+                <%= form_for resource, :as => :spree_user, :url => spree.registration_path do |f| %>
+                <div data-hook="signup_inside_form">
+                    <div class="row">
+	                    <div class="col-sm-6 padding-right-md">
+	                            <h2 class="color2">Your Email</h2>
+	                            <div class="form-group">
+		                            <label for="email" class="form-label">Enter your e-mail<span class="required">*</span></label>
+		                            <%= f.email_field :email, :class => 'form-control input-lg', :placeholder => Spree.t(:email) %>
+	                            </div><!-- End .form-group -->
+	                            <div class="xs-margin"></div><!-- space -->
+	                            <div class="form-group custom-checkbox-wrapper">
+	                                <span class="custom-checkbox-container">
+	                                    <input type="checkbox" name="policy" value="policy">
+	                                    <span class="custom-checkbox-icon"></span>
+	                                </span>
+	                                <span>I have reed and agree to the <a href="#">Privacy Policy.</a> </span>
+                            	</div><!-- End .form-group -->
+
+	                         <!-- <div class="md-margin visible-xs clearfix"></div> -->
+                        </div><!-- End .col-sm-6 -->
+
+                        <div class="col-sm-6 padding-left-md">
+                        		<h2 class="color2">Your Password</h2>
+	                            <div class="form-group">
+	                                <label for="email2" class="form-label">Enter your password<span class="required">*</span></label>
+	                                <%= f.password_field :password, :class => 'form-control input-lg', :placeholder => Spree.t(:password) %>
+	                            </div><!-- End .form-group -->
+	                            <div class="form-group">
+	                                <label for="password" class="form-label">Enter your password<span class="required">*</span></label>
+	                                <%= f.password_field :password_confirmation, :class => 'form-control input-lg', :placeholder => Spree.t(:confirm_password) %>
+	                            </div><!-- End .form-group -->   
+	                            <div data-hook="signup_below_password_fields"></div>                     	
+                        </div>
+                    </div><!-- End .row -->
+                        
+                  
+
+                    <div class="row" style="text-align:center;">
+                        <div class="col-sm-4 col-sm-offset-4" style="display:inline-block;">
+                            <div class="xs-margin"></div><!-- space -->
+                            <%= f.submit "Create Account", :class => 'btn btn-custom btn-lg' %>
+                        </div><!-- End .col-sm-6 -->
+                    </div><!-- End .row -->
+                    </div>
+                </form>
+            </div><!-- End .container -->
+            <%end%>
+
+            <div class="xlg-margin"></div><!-- space -->

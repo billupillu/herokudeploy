@@ -1,0 +1,12 @@
+it:
+  spree:
+    admin:
+      tab:
+        look_books: "Look Books"
+    new_look_book: "Nuovo Look Book"
+    listing_look_books: "Lista Look Books"
+    editing_look_book: "Modifica Look Book"
+  activerecord:
+    attributes:
+      spree/look_book:
+        url: Url

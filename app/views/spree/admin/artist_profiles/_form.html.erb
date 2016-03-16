@@ -1,0 +1,46 @@
+<div data-hook="admin_artist_profile_form_fields" class="row">
+  <div class="col-md-6">
+    <%= f.field_container :artist_img, class: ['form-group'] do %>
+      <%= f.label :artist_img %>
+      <%= f.file_field :artist_img, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :artist_img %>
+    <% end %>
+
+    <%= f.field_container :artist_name, class: ['form-group'] do %>
+      <%= f.label :artist_name %>
+      <%= f.text_field :artist_name, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :artist_name %>
+    <% end %>
+
+    <%= f.field_container :artist_expertise, class: ['form-group'] do %>
+      <%= f.label :artist_expertise %>
+      <%= f.text_field :artist_expertise, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :artist_expertise %>
+    <% end %>
+
+    <%= f.field_container :artist_brief, class: ['form-group'] do %>
+      <%= f.label :artist_brief %>
+      <%= f.text_area :artist_brief, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :artist_brief %>
+    <% end %>
+
+    <%= f.field_container :artist_fb, class: ['form-group'] do %>
+      <%= f.label :artist_fb %>
+      <%= f.text_field :artist_fb, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :artist_fb %>
+    <% end %>
+
+    <%= f.field_container :artist_url, class: ['form-group'] do %>
+      <%= f.label :artist_url %>
+      <%= f.text_field :artist_url, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :artist_url %>
+    <% end %>
+
+    <%= f.field_container :xtra_field, class: ['form-group'] do %>
+      <%= f.label :xtra_field %>
+      <%= f.text_field :xtra_field, class: 'form-control' %>
+      <%= error_message_on :artist_profile, :xtra_field %>
+    <% end %>
+
+  </div>
+</div>

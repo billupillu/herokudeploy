@@ -1,0 +1,115 @@
+
+            <div id="revslider-container" >
+                <div id="revslider" >
+                    <ul>
+                    	<%Spree::Banner.take(3).each do |banr|%>
+                        <li data-transition="incube-horizontal" data-slotamount="6" data-masterspeed="800" data-title="Trends">
+                            <!-- background image -->
+                            <img src="<%=asset_path 'revs/dummy.png'%>"  alt="slidebg1" data-lazyload="<%=banr.banner_img(:medium)%>" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+
+                            <div class="tp-caption rev-subtitle customin customout"
+                                data-x="center"
+                                data-y="167"
+                                data-customin="x:0;y:0;z:0;rotationX:-90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                                data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1000"
+                                data-start="900"
+                                data-easing="Power3.easeInOut"
+                                data-endspeed="600"
+                                style="z-index: 10"><%=banr.heading1%>
+                            </div>
+
+                            <div class="tp-caption customin customout"
+                                data-x="center"
+                                data-y="210"
+                                data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
+                                data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1000"
+                                data-start="1400"
+                                data-easing="Power3.easeInOut"
+                                data-endspeed="500"
+                                style="z-index: 33"><img src="<%=asset_path 'x.png'%>" alt="X">
+                            </div>
+
+                            <div class="tp-caption rev-title customin customout"
+                                data-x="center"
+                                data-y="230"
+                                data-speed="1100"
+                                data-customin="x:0;y:0;z:0;rotationX:-90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                                data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-start="1500"
+                                data-easing="Power3.easeInOut"
+                                data-endspeed="600"
+                                style="z-index: 6"><%=banr.heading2%>
+                            </div>
+
+
+                            <div class="tp-caption rev-text customin customout"
+                                data-x="center"
+                                data-y="319"
+                                data-speed ="1200"
+                                data-customin="x:0;y:0;z:0;rotationX:-90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                                data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-start="1700"
+                                data-easing="Power3.easeInOut"
+                                data-endspeed="600"
+                                style="z-index: 12"><%=truncate("#{banr.brief}",length: 152)%>
+                            </div>
+
+                            <div class="tp-caption rev-btn customin customout"
+                                data-x="center"
+                                data-y="414"
+                                data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                data-speed="1200"
+                                data-start="2100"
+                                data-easing="Power3.easeInOut"
+                                data-endspeed="600"
+                                style="z-index: 14">
+                                    <a href="<%=banr.url%>" class="btn btn-custom-3 color btn-lg min-width">Take look</a>
+                            </div>
+                        </li>
+                        <%end%>
+                       
+                    </ul>
+                </div><!-- End #revslider -->
+            </div><!-- End #revslider-container -->
+
+<%=render 'spree/shared/product_group'%>
+<%=render 'spree/shared/arrivals_slider'%>
+<%=render partial: 'spree/shared/simple_tab_container'%>
+<%=render 'spree/shared/testimonials'%>
+<%=render 'spree/shared/artists_brief'%>
+<%=render 'spree/shared/dontmissout'%>
+<%=render 'spree/shared/from_blog'%>
+
+
+
+
+
+
+
+
+
+<%if current_page?(spree.root_path)%>
+	<!--khali-->
+<%else%>
+	<% content_for :sidebar do %>
+	  <div data-hook="homepage_sidebar_navigation">
+	    <%= render :partial => 'spree/shared/taxonomies' %>
+	  </div>
+	<% end %>
+<%end%>	
+
+<%if current_page?(spree.root_path)%>
+	<!--khali-->
+<%else%>
+
+<div data-hook="homepage_products">
+  <% cache(cache_key_for_products) do %>
+    <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+  <% end %>
+</div>
+
+<%end%>
+

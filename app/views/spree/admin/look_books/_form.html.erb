@@ -1,0 +1,28 @@
+<div data-hook="admin_look_book_form_fields" class="row">
+  <div class="col-md-6">
+    <%= f.field_container :heading1, class: ['form-group'] do %>
+      <%= f.label :heading1 %>
+      <%= f.text_field :heading1, class: 'form-control' %>
+      <%= error_message_on :look_book, :heading1 %>
+    <% end %>
+
+    <%= f.field_container :heading2, class: ['form-group'] do %>
+      <%= f.label :heading2 %>
+      <%= f.text_field :heading2, class: 'form-control' %>
+      <%= error_message_on :look_book, :heading2 %>
+    <% end %>
+
+    <%= f.field_container :url, class: ['form-group'] do %>
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+      <%= error_message_on :look_book, :url %>
+    <% end %>
+
+    <%= f.field_container :lookbook_img, class: ['form-group'] do %>
+      <%= f.label :lookbook_img %>
+      <%= f.file_field :lookbook_img, class: 'form-control' %>
+      <%= error_message_on :look_book, :lookbook_img %>
+    <% end %>
+
+  </div>
+</div>

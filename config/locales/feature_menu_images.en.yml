@@ -1,0 +1,16 @@
+en:
+  spree:
+    admin:
+      tab:
+        feature_menu_images: "FeatureMenuImages"
+    new_feature_menu_image: "New FeatureMenuImage"
+    listing_feature_menu_images: "Listing FeatureMenuImages"
+    editing_feature_menu_image: "Editing FeatureMenuImage"
+  activerecord:
+    attributes:
+      spree/feature_menu_image:
+        feature_img: Feature Img
+        feature_url: Feature Url
+        feature_h_sub: Feature H Sub
+        feature_h_main: Feature H Main
+        feature_h_footer: Feature H Footer

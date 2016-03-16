@@ -1,0 +1,14 @@
+en:
+  spree:
+    admin:
+      tab:
+        feature_menu_subitems: "FeatureMenuSubitems"
+    new_feature_menu_subitem: "New FeatureMenuSubitem"
+    listing_feature_menu_subitems: "Listing FeatureMenuSubitems"
+    editing_feature_menu_subitem: "Editing FeatureMenuSubitem"
+  activerecord:
+    attributes:
+      spree/feature_menu_subitem:
+        spree_feature_menu_head_id: Spree Feature Menu Head
+        item: Item
+        url: Url

@@ -1,0 +1,6 @@
+<!-- insert_bottom "[data-hook='admin_tabs']" -->
+<% if can? :admin, Spree::FeatureMenuImage %>
+  <ul class="nav nav-sidebar">
+    <%= tab(:feature_menu_images, icon: "edit") %>
+  </ul>
+<% end %>

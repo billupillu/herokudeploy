@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_dont_miss_out) %>
+<% end %>
+
+<div data-hook="admin_dont_miss_out_edit_form_header">
+  <%= render 'spree/shared/error_messages', target: @dont_miss_out %>
+</div>
+
+<div data-hook="admin_dont_miss_out_edit_form">
+  <%= form_for [:admin, @dont_miss_out] do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', f: f %>
+        <%= render 'spree/admin/shared/edit_resource_links' %>
+      </div>
+    </div>
+  <% end %>
+</div>

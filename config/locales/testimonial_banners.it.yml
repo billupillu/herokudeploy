@@ -1,0 +1,12 @@
+it:
+  spree:
+    admin:
+      tab:
+        testimonial_banners: "Testimonial Banners"
+    new_testimonial_banner: "Nuovo Testimonial Banner"
+    listing_testimonial_banners: "Lista Testimonial Banners"
+    editing_testimonial_banner: "Modifica Testimonial Banner"
+  activerecord:
+    attributes:
+      spree/testimonial_banner:
+        position: Position

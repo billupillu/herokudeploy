@@ -1,0 +1,29 @@
+<div data-hook="admin_feature_menu_subitem_form_fields" class="row">
+  <div class="col-md-6">
+    <%= f.field_container :spree_feature_menu_head_id, class: ['form-group'] do %>
+      <%= f.label :spree_feature_menu_head_id %>
+
+      <select class="form-control" name="feature_menu_subitem[spree_feature_menu_head_id]" id="feature_menu_subitem_spree_feature_menu_head_id">
+      <%Spree::FeatureMenuHead.take(4).each do |k|%>
+          <option value="<%=k.id%>"><%=k.feature_menu_heading%></option>
+        <%end%>
+      </select>
+
+      <%= error_message_on :feature_menu_subitem, :spree_feature_menu_head_id %>
+    <% end %>
+
+    <%= f.field_container :item, class: ['form-group'] do %>
+      <%= f.label :item %>
+      <%= f.text_field :item, class: 'form-control' %>
+      <%= error_message_on :feature_menu_subitem, :item %>
+    <% end %>
+
+    <%= f.field_container :url, class: ['form-group'] do %>
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+      <%= error_message_on :feature_menu_subitem, :url %>
+    <% end %>
+
+  </div>
+</div>
+

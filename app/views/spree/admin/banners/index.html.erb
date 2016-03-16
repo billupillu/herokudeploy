@@ -1,0 +1,34 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_banners) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_banner), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_banner_link' %>
+<% end if can?(:create, Spree::Banner) %>
+
+<h4>Note: Please add only three banners, because current setting allows only three banners, you may add more than three but system will only pic first three (chronologically). And all three banners are must or app will stay blank for span of one slide.</h4>
+<h3>Image size: 1920x1200</h3>
+
+<table class="table" id="listing_banners" data-hook>
+  <thead>
+    <tr data-hook="admin_banners_index_headers">
+      <th><%= t(:heading1, scope: 'activerecord.attributes.spree/banner') %></th>
+      <th data-hook="admin_banners_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banners.each do |banner| %>
+      <tr id="<%= spree_dom_id banner %>" data-hook="admin_banners_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td><%= link_to banner.heading1, edit_object_url(banner) %></td>
+        <td><%=image_tag banner.banner_img(:thumb)%></td>
+        <td data-hook="admin_banners_index_row_actions" class="actions text-right">
+
+          <%= link_to_edit banner, no_text: true %>
+          <%= link_to_delete banner, no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @banners %>

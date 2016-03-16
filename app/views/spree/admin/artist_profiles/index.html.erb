@@ -1,0 +1,36 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_artist_profiles) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_artist_profile), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_artist_profile_link' %>
+<% end if can?(:create, Spree::ArtistProfile) %>
+<h2>Try to add Artists image of scale: 220x220 px for perfect alignment, Altough any image will work.</h2>
+<h3>System will try to pic only top eight artists, so try to fill atleast eight artists (and four artists are minimum)</h3>
+<table class="table" id="listing_artist_profiles" data-hook>
+  <thead>
+    <tr data-hook="admin_artist_profiles_index_headers">
+      <th><%= t(:artist_img, scope: 'activerecord.attributes.spree/artist_profile') %></th>
+      <th data-hook="admin_artist_profiles_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @artist_profiles.each do |artist_profile| %>
+      <tr id="<%= spree_dom_id artist_profile %>" data-hook="admin_artist_profiles_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td><%=artist_profile.artist_name%></td>
+        <td><%=artist_profile.artist_expertise%></td>
+        <td><%=truncate(artist_profile.artist_brief, length: 20)%></td>
+        <td><%=truncate(artist_profile.artist_url,length: 10)%></td>
+        <td><%= link_to "link", edit_object_url(artist_profile) %></td>
+        <td><%=image_tag artist_profile.artist_img(:thumb)%></td>
+        <td data-hook="admin_artist_profiles_index_row_actions" class="actions text-right">
+          <%= link_to_edit artist_profile, no_text: true %>
+          <%= link_to_delete artist_profile, no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @artist_profiles %>
+<!-- artist_profile.artist_img -->

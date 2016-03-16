@@ -1,0 +1,12 @@
+it:
+  spree:
+    admin:
+      tab:
+        feature_menu_heads: "Feature Menu Heads"
+    new_feature_menu_head: "Nuovo Feature Menu Head"
+    listing_feature_menu_heads: "Lista Feature Menu Heads"
+    editing_feature_menu_head: "Modifica Feature Menu Head"
+  activerecord:
+    attributes:
+      spree/feature_menu_head:
+        feature_menu_heading: Feature Menu Heading

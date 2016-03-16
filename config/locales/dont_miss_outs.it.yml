@@ -1,0 +1,16 @@
+it:
+  spree:
+    admin:
+      tab:
+        dont_miss_outs: "Dont Miss Outs"
+    new_dont_miss_out: "Nuovo Dont Miss Out"
+    listing_dont_miss_outs: "Lista Dont Miss Outs"
+    editing_dont_miss_out: "Modifica Dont Miss Out"
+  activerecord:
+    attributes:
+      spree/dont_miss_out:
+        dont_miss_out_img: Dont Miss Out Img
+        dont_miss_out_heading_sub: Dont Miss Out Heading Sub
+        dont_miss_out_heading_main: Dont Miss Out Heading Main
+        dont_miss_out_content: Dont Miss Out Content
+        dont_miss_out_url: Dont Miss Out Url

@@ -1,0 +1,165 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_feature_menu_subitems) %>
+<% end %>
+
+
+<h3>Here we can update items under "Feature Menu Tab"<br>
+Eg:
+<%=image_tag 'feature_item.jpg'%><br>
+</h3>
+
+
+  <%1.times do%>
+  <%head = Spree::FeatureMenuHead.all%>
+
+      <div class="panel panel-info">
+
+        <h2 style="text-align:center;color:#da4f76;"><%=head[0].feature_menu_heading%></h2>
+
+        <table class="table" id="listing_feature_menu_subitems" data-hook>
+          <thead>
+            <tr data-hook="admin_feature_menu_subitems_index_headers">
+              <th>Sr.No:</th>
+              <th>Menu Item</th>
+              <th>Menu Item 'URL'</th>
+              <th data-hook="admin_feature_menu_subitems_index_header_actions" class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <%haha=1%>
+              <% @feature_menu_subitems.where(spree_feature_menu_head_id: 1).each do |feature_menu_subitem| %>
+              <tr id="<%= spree_dom_id feature_menu_subitem %>" data-hook="admin_feature_menu_subitems_index_rows" class="<%= cycle('odd', 'even')%>">
+                <td><%=haha%></td>
+                <td><%=feature_menu_subitem.item%></td>
+                <td><%=feature_menu_subitem.url%></td>
+                <td data-hook="admin_feature_menu_subitems_index_row_actions" class="actions text-right">
+                  <%= link_to_edit feature_menu_subitem, no_text: true %>
+                  <%= link_to_delete feature_menu_subitem, no_text: true %>
+                </td>
+              </tr>
+              <%haha+=1%>
+            <% end %>
+          </tbody>
+        </table>
+        <%if @feature_menu_subitems.where(spree_feature_menu_head_id: 1).count<8%>
+          <div class="panel-footer">    
+            <%= button_link_to Spree.t(:new_feature_menu_subitem), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_feature_menu_subitem_link' %>    
+          </div>
+        <%else%>
+        <!---->
+        <%end%>
+      </div>
+
+            <div class="panel panel-warning">
+        <h2 style="text-align:center;color:#da4f76;"><%=head[1].feature_menu_heading%></h2>
+
+        <table class="table" id="listing_feature_menu_subitems" data-hook>
+          <thead>
+            <tr data-hook="admin_feature_menu_subitems_index_headers">
+              <th>Sr.No:</th>
+              <th>Menu Item</th>
+              <th>Menu Item 'URL'</th>
+              <th data-hook="admin_feature_menu_subitems_index_header_actions" class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <%haha_a=1%>
+              <% @feature_menu_subitems.where(spree_feature_menu_head_id: 2).each do |feature_menu_subitem| %>
+              <tr id="<%= spree_dom_id feature_menu_subitem %>" data-hook="admin_feature_menu_subitems_index_rows" class="<%= cycle('odd', 'even')%>">
+                <td><%=haha_a%></td>
+                <td><%=feature_menu_subitem.item%></td>
+                <td><%=feature_menu_subitem.url%></td>
+                <td data-hook="admin_feature_menu_subitems_index_row_actions" class="actions text-right">
+                  <%= link_to_edit feature_menu_subitem, no_text: true %>
+                  <%= link_to_delete feature_menu_subitem, no_text: true %>
+                </td>
+              </tr>
+              <%haha_a+=1%>
+            <% end %>
+          </tbody>
+        </table>
+           <%if @feature_menu_subitems.where(spree_feature_menu_head_id: 2).count<8%>
+          <div class="panel-footer">    
+            <%= button_link_to Spree.t(:new_feature_menu_subitem), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_feature_menu_subitem_link' %>    
+          </div>
+        <%else%>
+        <!---->
+        <%end%>
+      </div>
+
+            <div class="panel panel-success">
+        <h2 style="text-align:center;color:#da4f76;"><%=head[2].feature_menu_heading%></h2>
+
+        <table class="table" id="listing_feature_menu_subitems" data-hook>
+          <thead>
+            <tr data-hook="admin_feature_menu_subitems_index_headers">
+              <th>Sr.No:</th>
+              <th>Menu Item</th>
+              <th>Menu Item 'URL'</th>
+              <th data-hook="admin_feature_menu_subitems_index_header_actions" class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <%haha_aa=1%>
+              <% @feature_menu_subitems.where(spree_feature_menu_head_id: 3).each do |feature_menu_subitem| %>
+              <tr id="<%= spree_dom_id feature_menu_subitem %>" data-hook="admin_feature_menu_subitems_index_rows" class="<%= cycle('odd', 'even')%>">
+                <td><%=haha_aa%></td>
+                <td><%=feature_menu_subitem.item%></td>
+                <td><%=feature_menu_subitem.url%></td>
+                <td data-hook="admin_feature_menu_subitems_index_row_actions" class="actions text-right">
+                  <%= link_to_edit feature_menu_subitem, no_text: true %>
+                  <%= link_to_delete feature_menu_subitem, no_text: true %>
+                </td>
+              </tr>
+              <%haha_aa+=1%>
+            <% end %>
+          </tbody>
+        </table>
+           <%if @feature_menu_subitems.where(spree_feature_menu_head_id: 3).count<8%>
+          <div class="panel-footer">    
+            <%= button_link_to Spree.t(:new_feature_menu_subitem), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_feature_menu_subitem_link' %>    
+          </div>
+        <%else%>
+        <!---->
+        <%end%>
+      </div>
+
+
+      <div class="panel panel-danger">
+        <h2 style="text-align:center;color:#da4f76;"><%=head[3].feature_menu_heading%></h2>
+
+        <table class="table" id="listing_feature_menu_subitems" data-hook>
+          <thead>
+            <tr data-hook="admin_feature_menu_subitems_index_headers">
+              <th>Sr.No:</th>
+              <th>Menu Item</th>
+              <th>Menu Item 'URL'</th>
+              <th data-hook="admin_feature_menu_subitems_index_header_actions" class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <%haha_aaa=1%>
+              <% @feature_menu_subitems.where(spree_feature_menu_head_id: 4).each do |feature_menu_subitem| %>
+              <tr id="<%= spree_dom_id feature_menu_subitem %>" data-hook="admin_feature_menu_subitems_index_rows" class="<%= cycle('odd', 'even')%>">
+                <td><%=haha_aaa%></td>
+                <td><%=feature_menu_subitem.item%></td>
+                <td><%=feature_menu_subitem.url%></td>
+                <td data-hook="admin_feature_menu_subitems_index_row_actions" class="actions text-right">
+                  <%= link_to_edit feature_menu_subitem, no_text: true %>
+                  <%= link_to_delete feature_menu_subitem, no_text: true %>
+                </td>
+              </tr>
+              <%haha_aaa+=1%>
+            <% end %>
+          </tbody>
+        </table>
+        <%if @feature_menu_subitems.where(spree_feature_menu_head_id: 4).count<8%>
+          <div class="panel-footer">    
+            <%= button_link_to Spree.t(:new_feature_menu_subitem), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_feature_menu_subitem_link' %>    
+          </div>
+        <%else%>
+        <!---->
+        <%end%>
+      </div>
+  <%end%><!--main end-->
+

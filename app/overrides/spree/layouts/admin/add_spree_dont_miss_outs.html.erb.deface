@@ -1,0 +1,6 @@
+<!-- insert_bottom "[data-hook='admin_tabs']" -->
+<% if can? :admin, Spree::DontMissOut %>
+  <ul class="nav nav-sidebar">
+    <%= tab(:dont_miss_outs, icon: "edit") %>
+  </ul>
+<% end %>

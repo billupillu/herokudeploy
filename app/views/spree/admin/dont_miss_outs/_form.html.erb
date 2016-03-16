@@ -1,0 +1,34 @@
+<div data-hook="admin_dont_miss_out_form_fields" class="row">
+  <div class="col-md-6">
+    <%= f.field_container :dont_miss_out_img, class: ['form-group'] do %>
+      <%= f.label :dont_miss_out_img %>
+      <%= f.file_field :dont_miss_out_img, class: 'form-control' %>
+      <%= error_message_on :dont_miss_out, :dont_miss_out_img %>
+    <% end %>
+
+    <%= f.field_container :dont_miss_out_heading_sub, class: ['form-group'] do %>
+      <%= f.label :dont_miss_out_heading_sub %>
+      <%= f.text_field :dont_miss_out_heading_sub, class: 'form-control' %>
+      <%= error_message_on :dont_miss_out, :dont_miss_out_heading_sub %>
+    <% end %>
+
+    <%= f.field_container :dont_miss_out_heading_main, class: ['form-group'] do %>
+      <%= f.label :dont_miss_out_heading_main %>
+      <%= f.text_field :dont_miss_out_heading_main, class: 'form-control' %>
+      <%= error_message_on :dont_miss_out, :dont_miss_out_heading_main %>
+    <% end %>
+
+    <%= f.field_container :dont_miss_out_content, class: ['form-group'] do %>
+      <%= f.label :dont_miss_out_content %>
+      <%= f.text_field :dont_miss_out_content, class: 'form-control' %>
+      <%= error_message_on :dont_miss_out, :dont_miss_out_content %>
+    <% end %>
+
+    <%= f.field_container :dont_miss_out_url, class: ['form-group'] do %>
+      <%= f.label :dont_miss_out_url %>
+      <%= f.text_field :dont_miss_out_url, class: 'form-control' %>
+      <%= error_message_on :dont_miss_out, :dont_miss_out_url %>
+    <% end %>
+
+  </div>
+</div>

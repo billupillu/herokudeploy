@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_artist_profile) %>
+<% end %>
+
+<div data-hook="admin_artist_profile_edit_form_header">
+  <%= render 'spree/shared/error_messages', target: @artist_profile %>
+</div>
+
+<div data-hook="admin_artist_profile_edit_form">
+  <%= form_for [:admin, @artist_profile] do |f| %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', f: f %>
+        <%= render 'spree/admin/shared/edit_resource_links' %>
+      </div>
+    </div>
+  <% end %>
+</div>

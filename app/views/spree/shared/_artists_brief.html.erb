@@ -1,0 +1,314 @@
+<div class="lg-margin2x"></div><!-- space -->
+
+            <div class="container team-members">
+                <div class="carousel-container">
+                    <h3 class="small-title text-center">Meet our Artists</h3>
+                    <div class="row">
+                        <div id="artists-brief" class="owl-carousel team-member-carousel center-buttons" style="display:inline;">
+                        	
+                        	<%artists = Spree::ArtistProfile.take(8)%>
+                        	
+                        	    <div class="member-col">
+	                            	<%if artists[0] != nil%>
+	                                <div class="member">
+	                                	<%if artists[0].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[0].artist_img%>" alt="<%=artists[0].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[0].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[0].artist_name%></h3>
+	                                        <%if artists[0].artist_expertise!=nil%>
+	                                        <h4><%=artists[0].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[0].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[0].artist_fb != nil%>
+	                                            <li><a href="<%=artists[0].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[0].artist_url != nil%>
+	                                            <li><a href="<%=artists[0].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+
+	                                
+                        	    
+	                            	<%if artists[1] != nil%>
+	                                <div class="member">
+	                                	<%if artists[1].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[1].artist_img%>" alt="<%=artists[1].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[1].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[1].artist_name%></h3>
+	                                        <%if artists[1].artist_expertise!=nil%>
+	                                        <h4><%=artists[1].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[1].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[1].artist_fb != nil%>
+	                                            <li><a href="<%=artists[1].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[1].artist_url != nil%>
+	                                            <li><a href="<%=artists[1].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+	                            </div><!-- End .member-col -->
+	                            <!--==========   2  ===========-->
+
+	                            <div class="member-col">
+	                            	<%if artists[2] != nil%>
+	                                <div class="member">
+	                                	<%if artists[2].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[2].artist_img%>" alt="<%=artists[2].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[2].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[2].artist_name%></h3>
+	                                        <%if artists[2].artist_expertise!=nil%>
+	                                        <h4><%=artists[2].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[2].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[2].artist_fb != nil%>
+	                                            <li><a href="<%=artists[2].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[2].artist_url != nil%>
+	                                            <li><a href="<%=artists[2].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+
+	                                
+                        	    
+	                            	<%if artists[3] != nil%>
+	                                <div class="member">
+	                                	<%if artists[3].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[3].artist_img%>" alt="<%=artists[3].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[3].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[3].artist_name%></h3>
+	                                        <%if artists[3].artist_expertise!=nil%>
+	                                        <h4><%=artists[3].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[3].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[3].artist_fb != nil%>
+	                                            <li><a href="<%=artists[3].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[3].artist_url != nil%>
+	                                            <li><a href="<%=artists[3].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+	                            </div><!-- End .member-col -->
+
+	                            <!--================  3  ====================-->
+	                            <div class="member-col">
+	                            	<%if artists[4] != nil%>
+	                                <div class="member">
+	                                	<%if artists[4].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[4].artist_img%>" alt="<%=artists[4].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[4].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[4].artist_name%></h3>
+	                                        <%if artists[4].artist_expertise!=nil%>
+	                                        <h4><%=artists[4].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[4].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[4].artist_fb != nil%>
+	                                            <li><a href="<%=artists[4].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[4].artist_url != nil%>
+	                                            <li><a href="<%=artists[4].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+
+	                                
+                        	    
+	                            	<%if artists[5] != nil%>
+	                                <div class="member">
+	                                	<%if artists[5].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[5].artist_img%>" alt="<%=artists[5].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[5].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[5].artist_name%></h3>
+	                                        <%if artists[5].artist_expertise!=nil%>
+	                                        <h4><%=artists[5].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[5].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[5].artist_fb != nil%>
+	                                            <li><a href="<%=artists[5].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[5].artist_url != nil%>
+	                                            <li><a href="<%=artists[5].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+	                            </div><!-- End .member-col -->
+	                            
+	                            <!--===============  4  ================-->
+	                            <div class="member-col">
+	                            	<%if artists[6] != nil%>
+	                                <div class="member">
+	                                	<%if artists[6].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[6].artist_img%>" alt="<%=artists[6].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[6].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[6].artist_name%></h3>
+	                                        <%if artists[6].artist_expertise!=nil%>
+	                                        <h4><%=artists[6].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[6].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[6].artist_fb != nil%>
+	                                            <li><a href="<%=artists[6].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[6].artist_url != nil%>
+	                                            <li><a href="<%=artists[6].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+
+	                                
+                        	    
+	                            	<%if artists[7] != nil%>
+	                                <div class="member">
+	                                	<%if artists[7].artist_img!=nil%>
+	                                    <figure><img src="<%=artists[7].artist_img%>" alt="<%=artists[7].artist_name%>" class="img-responsive"></figure>
+	                                    <%else%>
+	                                    <figure><img src="<%=asset_path 'evan.jpg'%>" alt="<%=artists[7].artist_name%>" class="img-responsive"></figure>	
+	                                    <%end%>
+	                                    <div class="member-content">
+	                                        <h3><%=artists[7].artist_name%></h3>
+	                                        <%if artists[7].artist_expertise!=nil%>
+	                                        <h4><%=artists[7].artist_expertise%></h4>
+	                                        <%else%>
+	                                        <h4></h4>
+	                                        <%end%>
+	                                        <p><%=truncate(artists[7].artist_brief,length: 300)%></p>
+	                                        <ul class="social-links small clearfix">
+	                                        	<%if artists[7].artist_fb != nil%>
+	                                            <li><a href="<%=artists[7].artist_fb%>" class="social-icon icon-facebook" title="Facebook"></a></li>
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>
+	                                            <%if artists[7].artist_url != nil%>
+	                                            <li><a href="<%=artists[7].artist_url%>" class="social-icon icon-twitter" ></a></li>	 
+	                                            <%else%>
+	                                            <li></li>
+	                                            <%end%>                                           
+	                                        </ul>
+	                                    </div><!-- End .member-content -->
+	                                </div><!-- End .member -->
+	                                <%else%>
+	                            		<div class="member"></div>
+	                            	<%end%>
+	                            </div><!-- End .member-col -->
+
+                           <!-- one time do end -->
+                        </div><!-- End .owl-carousel -->
+                    </div><!-- End .row -->
+                </div><!-- End .carousel-container -->
+            </div><!-- End .container -->
+<%=javascript_tag do%>
+	
+	$("#artists-brief").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 2,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+ 
+    });
+     $('.owl-pagination').css({"display":"none"});
+    //$('#kk .owl-prev').css({"display":"none"});
+    //$('#kk .owl-next').css({"display":"none"});
+
+<%end%>            

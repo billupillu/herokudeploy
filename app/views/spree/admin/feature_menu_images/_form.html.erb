@@ -1,0 +1,34 @@
+<div data-hook="admin_feature_menu_image_form_fields" class="row">
+  <div class="col-md-6">
+    <%= f.field_container :feature_img, class: ['form-group'] do %>
+      <%= f.label :feature_img %>
+      <%= f.file_field :feature_img, class: 'form-control' %>
+      <%= error_message_on :feature_menu_image, :feature_img %>
+    <% end %>
+
+    <%= f.field_container :feature_url, class: ['form-group'] do %>
+      <%= f.label :feature_url %>
+      <%= f.text_field :feature_url, class: 'form-control' %>
+      <%= error_message_on :feature_menu_image, :feature_url %>
+    <% end %>
+
+    <%= f.field_container :feature_h_sub, class: ['form-group'] do %>
+      <%= f.label :feature_h_sub %>
+      <%= f.text_field :feature_h_sub, class: 'form-control' %>
+      <%= error_message_on :feature_menu_image, :feature_h_sub %>
+    <% end %>
+
+    <%= f.field_container :feature_h_main, class: ['form-group'] do %>
+      <%= f.label :feature_h_main %>
+      <%= f.text_field :feature_h_main, class: 'form-control' %>
+      <%= error_message_on :feature_menu_image, :feature_h_main %>
+    <% end %>
+
+    <%= f.field_container :feature_h_footer, class: ['form-group'] do %>
+      <%= f.label :feature_h_footer %>
+      <%= f.text_field :feature_h_footer, class: 'form-control' %>
+      <%= error_message_on :feature_menu_image, :feature_h_footer %>
+    <% end %>
+
+  </div>
+</div>

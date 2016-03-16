@@ -1,0 +1,52 @@
+<div class="lg-margin3x hidden-xs"></div><!-- space -->
+<div class="md-margin2x visible-xs"></div><!-- space -->
+<%1.times do%>
+<%domi = Spree::DontMissOut.last%>
+
+			<%if domi.dont_miss_out_img != nil%>
+            <div id="newsletter-section" class="small index6 parallax" data-stellar-background-ratio="0.1" style="background-image:url(<%=domi.dont_miss_out_img%>)">
+            <%else%>
+            <div id="newsletter-section" class="small index6 parallax" data-stellar-background-ratio="0.1" style="background-image:url(<%=asset_path 'dont.jpg'%>)">
+            <%end%>
+
+            <%if domi!=nil%>
+                <div class="vcenter-container">
+                    <div class="vcenter">
+                        <div class="newsletter-content light text-center">
+                            <h3><%=domi.dont_miss_out_heading_sub%></h3>
+                            <h2><%=domi.dont_miss_out_heading_main%></h2>
+                            <p><%=truncate(domi.dont_miss_out_content,length: 120)%></p>
+                            <a href="<%=domi.dont_miss_out_url%>" id="newsletter">
+                            	<div class="input-group input-group-lg">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-custom-3">SIGN UP!</button>
+                                    </span>
+                                </div>
+                            </a>
+                        </div><!-- End .newsletter-content -->
+                    </div><!-- End .vcenter -->
+                </div><!-- End .vcenter-container -->
+            </div><!-- #newsletter-section -->
+
+            <%else%>
+            	<div class="vcenter-container">
+                    <div class="vcenter">
+                        <div class="newsletter-content light text-center">
+                            <h3>TIMES A TICKING</h3>
+                            <h2>DON'T MISS OUT</h2>
+                            <p>Subscribe for the latest styles and sales, plus get 25% off your first order.</p>
+                            <a href="#" id="newsletter">
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-custom-3" >SIGN UP!</button>
+                                    </span>
+                                </div><!-- End .input-group -->
+                            </a>
+                        </div><!-- End .newsletter-content -->
+                    </div><!-- End .vcenter -->
+                </div><!-- End .vcenter-container -->
+            </div><!-- #newsletter-section -->
+            <%end%>
+
+
+<%end%>

@@ -1,0 +1,30 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_look_books) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_look_book), new_object_url, class: 'btn-success', icon: 'add', id: 'admin_new_look_book_link' %>
+<% end if can?(:create, Spree::LookBook) %>
+<h4>Only top three images will be selected to be displayed in look book. Required image size: 571x710</h4>
+<table class="table" id="listing_look_books" data-hook>
+  <thead>
+    <tr data-hook="admin_look_books_index_headers">
+      <th><%= t(:url, scope: 'activerecord.attributes.spree/look_book') %></th>
+      <th data-hook="admin_look_books_index_header_actions" class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @look_books.each do |look_book| %>
+      <tr id="<%= spree_dom_id look_book %>" data-hook="admin_look_books_index_rows" class="<%= cycle('odd', 'even')%>">
+        <td><%= link_to look_book.url, edit_object_url(look_book) %></td>
+        <td><%=image_tag look_book.lookbook_img(:thumb)%></td>
+        <td data-hook="admin_look_books_index_row_actions" class="actions text-right">
+          <%= link_to_edit look_book, no_text: true %>
+          <%= link_to_delete look_book, no_text: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @look_books %>

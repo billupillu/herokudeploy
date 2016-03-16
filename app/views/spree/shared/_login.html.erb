@@ -1,0 +1,46 @@
+
+
+<div class="xs-margin half"></div><!-- space -->
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-6 padding-right-md">
+                        <h2 class="color2">New customer</h2>
+                        <p>If you are not a member, you need to go to create an account.</p>
+                        <p>By creating an account with ArtAnzels, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+
+                        <div class="xs-margin"></div><!-- space -->
+
+                        <a href="/signup" class="btn btn-custom btn-lg">Create Account</a>
+                    </div><!-- End .col-md-6 -->
+
+                    <div class="xlg-margin visible-xs clearfix"></div><!-- space -->
+                    
+                    <div class="col-sm-6 padding-left-md">
+                        <%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
+                            <h2 class="color2">Your Password</h2>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Enter your e-mail<span class="required">*</span></label>
+                                <%= f.email_field :email, :class => 'form-control input-lg',autofocus: true, :tabindex => 1, :placeholder => Spree.t(:email) %>
+                            </div><!-- End .form-group -->
+                            <div class="form-group">
+                                <label for="password" class="form-label">Enter your password<span class="required">*</span></label>
+                                <%= f.password_field :password, :class => 'form-control input-lg', :placeholder => Spree.t(:password) %>
+                            </div><!-- End .form-group -->
+                                <div class="checkbox form-group">
+                                    <label>
+                                        <%= f.check_box :remember_me ,class: "s"%>
+                                        <%= f.label :remember_me, Spree.t(:remember_me) %>
+                                    </label>
+                                </div>
+                           
+
+                            <div class="xs-margin"></div><!-- space -->
+
+                            <%= f.submit Spree.t(:login), :class => 'btn btn-custom btn-lg min-width', :tabindex => 3 %>
+                        <%end%>
+                    </div><!-- End .col-md-6 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+            <style type="text/css">.s{border-radius: 0px !important;}</style>
