@@ -85,8 +85,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: anzels_production
-  pool: 5
-  password:
+  
+  
